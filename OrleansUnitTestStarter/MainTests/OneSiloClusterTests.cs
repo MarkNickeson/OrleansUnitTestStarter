@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace MainTests
 {
-    public class FirstTest : IAsyncLifetime
+    public class OneSiloClusterTests : IAsyncLifetime
     {
         IHost? siloHost;
         IHost? clientHost;

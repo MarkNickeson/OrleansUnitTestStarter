@@ -2,7 +2,7 @@ using CommonInterfacesAndTypes;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace StarterTests
+namespace MinimumViableTests
 {
     public class OneSiloClusterTests : IAsyncLifetime
     {

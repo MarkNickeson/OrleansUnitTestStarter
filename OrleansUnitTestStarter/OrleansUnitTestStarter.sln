@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterTests", "MainTests\StarterTests.csproj", "{20E9A9E4-325A-41E5-9750-CB66F9038959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimumViableTests", "MainTests\MinimumViableTests.csproj", "{20E9A9E4-325A-41E5-9750-CB66F9038959}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonInterfacesAndTypes", "CommonInterfacesAndTypes\CommonInterfacesAndTypes.csproj", "{1426A039-D6CB-4F1E-96FB-0D4F64A81E7C}"
 EndProject
@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrainImplementations", "Gra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{13812787-9E9D-48B2-85B8-6F3E31873C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceDemos", "ReferenceDemos\ReferenceDemos.csproj", "{F19A6B77-311E-4001-A98F-E0D5D79CAC3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamplePatternTests", "ReferenceDemos\SamplePatternTests.csproj", "{F19A6B77-311E-4001-A98F-E0D5D79CAC3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoInterfacesAndTypes", "DemoInterfacesAndTypes\DemoInterfacesAndTypes.csproj", "{D98433A3-F5E0-4BE7-9197-29173AE033E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoInterfacesAndTypes", "DemoInterfacesAndTypes\DemoInterfacesAndTypes.csproj", "{D98433A3-F5E0-4BE7-9197-29173AE033E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGrains", "DemoGrains\DemoGrains.csproj", "{A5CD2C6B-AF4E-46C5-8AF5-EA99B22AADAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoGrains", "DemoGrains\DemoGrains.csproj", "{A5CD2C6B-AF4E-46C5-8AF5-EA99B22AADAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuickStart", "QuickStart", "{B8DD876A-EE25-4854-ADB5-4E562295A5B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{20E9A9E4-325A-41E5-9750-CB66F9038959} = {B8DD876A-EE25-4854-ADB5-4E562295A5B7}
+		{1426A039-D6CB-4F1E-96FB-0D4F64A81E7C} = {B8DD876A-EE25-4854-ADB5-4E562295A5B7}
+		{A9409BF9-D56D-427A-90AF-04A1034C20D6} = {B8DD876A-EE25-4854-ADB5-4E562295A5B7}
 		{F19A6B77-311E-4001-A98F-E0D5D79CAC3E} = {13812787-9E9D-48B2-85B8-6F3E31873C25}
 		{D98433A3-F5E0-4BE7-9197-29173AE033E8} = {13812787-9E9D-48B2-85B8-6F3E31873C25}
 		{A5CD2C6B-AF4E-46C5-8AF5-EA99B22AADAA} = {13812787-9E9D-48B2-85B8-6F3E31873C25}

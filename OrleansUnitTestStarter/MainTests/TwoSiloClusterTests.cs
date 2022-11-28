@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using System.Diagnostics;
 using System.Text;
 
-namespace StarterTests
+namespace MinimumViableTests
 {
     public class TwoSiloClusterTests : IAsyncLifetime
     {

@@ -36,4 +36,25 @@ namespace DemoGrains
             return Task.CompletedTask;
         }
     }
+
+    public class ObserverReferenceEqualityDemo : Grain, IObserverReferenceEqualityDemo
+    {
+        IClientSideObserver? _observer;
+
+        public Task Once(IClientSideObserver observer)
+        {
+            _observer = observer;
+            return Task.CompletedTask;
+        }
+
+        public Task<bool> TwiceEqualitySign(IClientSideObserver observer)
+        {
+            return Task.FromResult(_observer == observer);
+        }
+
+        public Task<bool> TwiceEqualsMethod(IClientSideObserver observer)
+        {
+            return Task.FromResult(observer.Equals(_observer));
+        }
+    }
 }

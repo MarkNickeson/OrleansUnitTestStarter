@@ -13,4 +13,11 @@
 
         Task SetObserver(IClientSideObserver observer);
     }
+
+    public interface IObserverReferenceEqualityDemo : IGrainWithStringKey
+    {
+        Task Once(IClientSideObserver observer);
+        Task<bool> TwiceEqualitySign(IClientSideObserver observer);
+        Task<bool> TwiceEqualsMethod(IClientSideObserver observer);
+    }
 }

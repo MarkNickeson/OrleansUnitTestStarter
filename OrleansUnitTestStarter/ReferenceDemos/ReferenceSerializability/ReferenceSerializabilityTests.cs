@@ -38,7 +38,7 @@ namespace ReferencePatterns.ReferenceSerializability
         }
 
         [Fact]
-        public async Task GrainObserverReferenceMobility()
+        public async Task ObserverReferenceMobility()
         {
             // this test demonstrates that client side grain observer references are serializable
             // which allows a factory grain to configure another grain with the observer reference
@@ -56,6 +56,48 @@ namespace ReferencePatterns.ReferenceSerializability
             await refGrain.TestCallback(testPayload);
 
             Assert.Equal(testPayload!, obs.LastPayoad!);
+        }
+
+        [Fact]
+        public async Task ObserverReferenceEqualsMethod_ExpectTrue()
+        {
+            // test that a client side observer reference is serialized to grain in
+            // such a way that two grain-side references are equal            
+
+            // prepare observer
+            var obs = new ClientSideObserver();
+            var obsref = _client.CreateObjectReference<IClientSideObserver>(obs);
+
+            var sampleGrain = _client.GetGrain<IObserverReferenceEqualityDemo>("demo");
+
+            // pass twice in different calls, with second call doing equality comparison
+            await sampleGrain.Once(obsref);
+            var isEqual = await sampleGrain.TwiceEqualsMethod(obsref);
+
+            // expect equality. As one might hope, the two serialized copies are
+            // equal when .Equals implementation of underlying type is used
+            Assert.True(isEqual);
+        }
+
+        [Fact]
+        public async Task ObserverReferenceEqualitySign_ExpectFalse()
+        {
+            // test that a client side observer reference is serialized to grain in
+            // such a way that two grain-side references are equal            
+
+            // prepare observer
+            var obs = new ClientSideObserver();
+            var obsref = _client.CreateObjectReference<IClientSideObserver>(obs);
+
+            var sampleGrain = _client.GetGrain<IObserverReferenceEqualityDemo>("demo");
+
+            // pass twice in different calls, with second call doing equality comparison
+            await sampleGrain.Once(obsref);
+            var isEqual = await sampleGrain.TwiceEqualitySign(obsref);
+
+            // == seems to be reference equality, which is not the case because two copies
+            // due to serialization
+            Assert.False(isEqual);
         }
     }
 }

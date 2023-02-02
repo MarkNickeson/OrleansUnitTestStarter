@@ -14,10 +14,10 @@ namespace DemoGrains
         string? _pokedWith;
         string? _lastMessage;
 
-        public override Task OnActivateAsync(CancellationToken cancellationToken)
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             // simulate with a delay
-            return Task.Delay(5000);
+            await Task.Delay(5000);
         }
 
         public Task PokeToActivate(string pokeWith)

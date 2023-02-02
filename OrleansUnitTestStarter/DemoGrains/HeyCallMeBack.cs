@@ -25,6 +25,10 @@ namespace DemoGrains
             return Task.CompletedTask;
         }
 
+        public async Task DoBlockingWait(TimeSpan waitTime)
+        {
+            await Task.Delay(waitTime);
+        }
 
         async Task DoCallbackIn(IClientSideObserver callback, TimeSpan deltaT)
         {

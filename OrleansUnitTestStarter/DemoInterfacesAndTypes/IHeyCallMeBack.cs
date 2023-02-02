@@ -11,5 +11,7 @@ namespace DemoInterfacesAndTypes
         Task CallBackIn(IClientSideObserver callback, TimeSpan deltaT);
 
         Task CallBackNTimes(IClientSideObserver callback, TimeSpan deltaT, int maxCount);
+
+        Task DoBlockingWait(TimeSpan waitTime);
     }
 }

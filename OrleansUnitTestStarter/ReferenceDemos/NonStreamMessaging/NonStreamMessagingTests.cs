@@ -81,7 +81,7 @@ namespace SamplePatterns.NonStreamMessaging
             await light.RelayMessage("Test message");
             sw.Stop();
 
-            // expect relay time to be <<< 1000 ms which is the processing time within HandleMessage
+            // expect relay time to be <<< 1000 ms which is the simulated processing time within HandleMessage
             // eg light.RelayMessage uses one way to heavy.HandleMessage, so even though HandleMessage takes 1000ms to process, the relay does not have to wait
             Assert.True(sw.ElapsedMilliseconds < 1000.0);
 
